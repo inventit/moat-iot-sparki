@@ -1,0 +1,66 @@
+<ion-view title="Sparki Dashboard">
+  <ion-content class="has-header padding">
+  <!--
+    <h2>Status</h2>
+    <div class="row">
+      <div class="col">.col</div>
+      <div class="col">.col</div>
+      <div class="col">.col</div>
+      <div class="col">1<br>2<br>3<br>4</div>
+    </div>
+
+    <div class="row">
+      <div class="col col-top">.col</div>
+      <div class="col col-center">.col</div>
+      <div class="col col-bottom">.col</div>
+      <div class="col">1<br>2<br>3<br>4</div>
+    </div>
+
+    <div class="row row-top">
+      <div class="col">.col</div>
+      <div class="col">.col</div>
+      <div class="col">.col</div>
+      <div class="col">1<br>2<br>3<br>4</div>
+    </div>
+  -->
+
+    <h2>Control</h2>
+
+    <div class="row row-center">
+      <div class="col col-center col-33 col-offset-33" style="text-align:center;">
+        <button class="button button-clear button-large button-positive icon ion-chevron-up" ng-click="forward()"></button>
+      </div>
+    </div>
+
+    <div class="row row-center">
+      <div class="col col-center col-33" style="text-align:center;">
+        <button class="button button-clear button-large button-positive icon ion-chevron-left" ng-click="left()"></button>
+      </div>
+      <div class="col col-center col-33" style="text-align:center;">
+        <button class="button button-clear button-large button-positive icon ion-stop" ng-click="stop()"></button>
+      </div>
+      <div class="col col-center col-33" style="text-align:center;">
+        <button class="button button-clear button-large button-positive icon ion-chevron-right" ng-click="right()"></button>
+      </div>
+    </div>
+
+    <div class="row row-center">
+      <div class="col col-center col-33" style="text-align:center;">
+        <button class="button button-clear button-large button-positive icon ion-ios7-bell" ng-click="beep()"></button>
+      </div>
+      <div class="col col-center col-33" style="text-align:center;">
+        <button class="button button-clear button-large button-positive icon ion-chevron-down" ng-click="back()"></button>
+      </div>
+    </div>
+
+    <div class="row row-center">
+      <div class="col col-center col-33" style="text-align:center;">
+        {{debug}}
+      </div>
+      <div class="col col-center col-33 col-offset-33" style="text-align:center;">
+        <img ng-src="img/sparki.png" />
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
