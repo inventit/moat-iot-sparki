@@ -1,0 +1,44 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.inventit.moat.android.example3" >
+
+    <uses-permission android:name="com.yourinventit.servicesync.android.permission.MOAT_ANDROID" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+	<uses-feature android:name="android.hardware.usb.host" />
+    
+    <uses-sdk android:minSdkVersion="12" />
+
+    <application
+        android:allowClearUserData="false"
+        android:description="@string/app_desc"
+        android:enabled="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:logo="@drawable/icon" >
+
+        <!-- Main Activity -->
+        <activity
+            android:name="io.inventit.moat.android.example3.SampleApplication"
+            android:launchMode="singleTask"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+        <!-- Private Service -->
+        <service
+            android:name="io.inventit.moat.android.example3.MoatIoTService"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
