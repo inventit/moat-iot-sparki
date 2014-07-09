@@ -16,8 +16,8 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
-import android.os.Looper;
 import android.widget.Toast;
 
 import com.yourinventit.dmc.api.moat.ContextFactory;
@@ -72,7 +72,7 @@ public class MoatIoTService extends Service {
 		super.onCreate();
 
 		// Just for code readability
-		final Context context = this;
+		final Context context = getApplicationContext();
 
 		// Creating a new DatabaseHelper
 		databaseHelper = new DatabaseHelper(context);
@@ -141,14 +141,8 @@ public class MoatIoTService extends Service {
 								.setSparkiModelMapper(sparkiModelMapper);
 
 						LOGGER.info("onCreate(): OK. I'm ready.");
-						Looper.prepare();
-						new Handler(getMainLooper()).post(new Runnable() {
-							public void run() {
-								Toast.makeText(getApplicationContext(),
-										"OK. Successfully connected to GW.",
-										Toast.LENGTH_LONG).show();
-							}
-						});
+						postToastMessage("OK. Successfully connected to GW.",
+								getApplicationContext());
 					}
 
 					/**
@@ -160,19 +154,23 @@ public class MoatIoTService extends Service {
 					@Override
 					public void onFailure(final Throwable throwable) {
 						LOGGER.error("onCreate(): ERROR!!!!!!!!!!.", throwable);
-						Looper.prepare();
-						new Handler(getMainLooper()).post(new Runnable() {
-							public void run() {
-								Toast.makeText(
-										getApplicationContext(),
-										"Exception Occured. Failed to initMoat!:"
-												+ throwable.getMessage(),
-										Toast.LENGTH_LONG).show();
-							}
-						});
+						postToastMessage(
+								"Exception Occured. Failed to initMoat!:",
+								getApplicationContext());
 					}
 
 				});
+	}
+
+	static void postToastMessage(final String message, final Context context) {
+		final HandlerThread handlerThread = new HandlerThread(
+				"MoatIoTService.Toast");
+		handlerThread.start();
+		new Handler(handlerThread.getLooper()).post(new Runnable() {
+			public void run() {
+				Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+			}
+		});
 	}
 
 	/**
