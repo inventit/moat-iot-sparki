@@ -223,7 +223,6 @@ public class Activator implements BundleActivator {
 		additionalProperties.put("urn:inventit:dmc:app:application-id", APP_ID);
 		additionalProperties.put("urn:inventit:dmc:app:package-id", PACKAGE_ID);
 		additionalProperties.put("urn:inventit:dmc:domain-id", DOMAIN_ID);
-		additionalProperties.put("urn:inventit:dmc:pubsub:trace", "true");
 
 		sysMoatReference = bundleContext.getServiceReference(Moat.class);
 		// Gets a system global Moat instance.

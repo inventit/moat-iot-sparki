@@ -14,7 +14,7 @@
 
   <logger name="JDBC_SQL" level="info"/>
 
-  <root level="all">
+  <root level="info">
     <appender-ref ref="STDOUT" />
   </root>
 </configuration>
