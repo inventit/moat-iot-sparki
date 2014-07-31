@@ -1,0 +1,4 @@
+/target/
+fraisedb.*
+felix-cache
+*.bak

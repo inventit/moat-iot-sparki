@@ -1,0 +1,36 @@
+{
+	"title" : "Inventit® ServiceSync Client/Gateway Application Configuration",
+
+	"# You can write comments here. UTF-8 is acceptable in this file." : "",
+	"# Note that avoid to put the duplicate comments as JSON parser complains." : "",
+
+	"# (Devel) Bootstrap URL" : "",
+	"bootstrap" : {
+	    "baseUrl"            : "https://sandbox.service-sync.com",
+	    "appId"              : "your-app-id",
+	    "domainId"           : "your-domain-id",
+	    "enrollmentUserId"   : "your-enrollment-user-id",
+	    "enrollmentPassword" : "your-enrollment-password",
+	},
+    
+	"# Scheduler Service" : "",
+    "scheduler" : {
+    	"corePoolSize" : 100,
+    },
+    
+	"# Inner Bundle Activators" : "",
+    "innerBundleActivators" : [
+    ],
+    
+	"# Derby Database Configuration" : "",
+    "database" : {
+		"jdbcDriver" : "org.hsqldb.jdbcDriver",
+		"jdbcUrl" : "jdbc:hsqldb:file:fraisedb;create=true;hsqldb.log_size=1",
+		"jdbcUser" : "sa",
+		"jdbcPassword" : "",
+		"validationQuery" : "SELECT 1 FROM SYSIBM.SYSDUMMY1",
+
+		"# Can be empty unless supported." : "",
+		"shutdownUrl" : "jdbc:hsqldb:file:fraisedb;shutdown=true",
+    },
+}
