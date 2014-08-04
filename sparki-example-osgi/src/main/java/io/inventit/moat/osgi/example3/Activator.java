@@ -11,7 +11,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -49,8 +48,7 @@ public class Activator implements BundleActivator {
 	private final PubSubCallback<VibrationDevice> callback = new PubSubCallback<VibrationDevice>() {
 		@Override
 		public void onAction(VibrationDevice modelObject) {
-			LOGGER.info("[Arrived] {}",
-					ToStringBuilder.reflectionToString(modelObject));
+			LOGGER.info("[Arrived] {}", new String(modelObject.getBinary()));
 		}
 	};
 
