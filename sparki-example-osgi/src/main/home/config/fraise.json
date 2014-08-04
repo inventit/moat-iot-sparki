@@ -9,6 +9,7 @@
 	    "baseUrl"            : "https://sandbox.service-sync.com",
 	    "appId"              : "your-app-id",
 	    "domainId"           : "your-domain-id",
+        "deviceName"         : "your-device-name",
 	    "enrollmentUserId"   : "your-enrollment-user-id",
 	    "enrollmentPassword" : "your-enrollment-password",
 	},
@@ -22,7 +23,7 @@
     "innerBundleActivators" : [
     ],
     
-	"# Derby Database Configuration" : "",
+	"# Hsql Database Configuration" : "",
     "database" : {
 		"jdbcDriver" : "org.hsqldb.jdbcDriver",
 		"jdbcUrl" : "jdbc:hsqldb:file:fraisedb;create=true;hsqldb.log_size=1",
