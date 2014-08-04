@@ -46,9 +46,9 @@ public class Activator implements BundleActivator {
 	// Modify the following constants if needed.
 	public static final String PACKAGE_ID = "simple-example";
 
-	private final PubSubCallback<SparkiAction> callback = new PubSubCallback<SparkiAction>() {
+	private final PubSubCallback<VibrationDevice> callback = new PubSubCallback<VibrationDevice>() {
 		@Override
-		public void onAction(SparkiAction modelObject) {
+		public void onAction(VibrationDevice modelObject) {
 			LOGGER.info("[Arrived] {}",
 					ToStringBuilder.reflectionToString(modelObject));
 		}
@@ -103,8 +103,8 @@ public class Activator implements BundleActivator {
 		if (client.connected() == false) {
 			client.begin(PayloadCodec.RAW, PayloadCodec.RAW);
 			LOGGER.info("Starting subscription for {}",
-					ShakeEvent.class.getName());
-			client.subscribe(ShakeEvent.class, PubSubQoS.FIRE_AND_FORGET,
+					VibrationDevice.class.getName());
+			client.subscribe(VibrationDevice.class, PubSubQoS.FIRE_AND_FORGET,
 					callback);
 			LOGGER.info("Successfully subscribed");
 		}
@@ -145,9 +145,9 @@ public class Activator implements BundleActivator {
 
 			@Override
 			public void run() {
-				// TODO
-				// TODO
-				// TODO
+				// TODO publish ShakeEvent
+				// TODO publish ShakeEvent
+				// TODO publish ShakeEvent
 			}
 		}, 1000, 5000, TimeUnit.SECONDS);
 	}

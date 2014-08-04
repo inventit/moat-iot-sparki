@@ -7,6 +7,7 @@ package io.inventit.moat.osgi.example3;
 
 import java.util.Map;
 
+import com.yourinventit.dmc.api.moat.Model;
 import com.yourinventit.dmc.api.moat.ResourceType;
 
 /**
@@ -15,6 +16,7 @@ import com.yourinventit.dmc.api.moat.ResourceType;
  * @author dbaba@yourinventit.com
  * 
  */
+@Model(binaryPayloadField = "binary")
 public class VibrationDevice {
 
 	/**
@@ -22,6 +24,8 @@ public class VibrationDevice {
 	 */
 	@ResourceType
 	private Map<String, String> image;
+
+	private byte[] binary;
 
 	/**
 	 * @return the image
@@ -36,5 +40,13 @@ public class VibrationDevice {
 	 */
 	public void setImage(Map<String, String> image) {
 		this.image = image;
+	}
+
+	public byte[] getBinary() {
+		return binary;
+	}
+
+	public void setBinary(byte[] binary) {
+		this.binary = binary;
 	}
 }
