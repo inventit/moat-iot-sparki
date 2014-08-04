@@ -23,7 +23,7 @@
     "innerBundleActivators" : [
     ],
     
-	"# Derby Database Configuration" : "",
+	"# Hsqldb Database Configuration" : "",
     "database" : {
 		"jdbcDriver" : "org.hsqldb.jdbcDriver",
 		"jdbcUrl" : "jdbc:hsqldb:file:fraisedb;create=true;hsqldb.log_size=1",
