@@ -147,7 +147,7 @@ public class Activator implements BundleActivator {
 				// TODO publish ShakeEvent
 				// TODO publish ShakeEvent
 			}
-		}, 1000, 5000, TimeUnit.SECONDS);
+		}, 1, 5, TimeUnit.SECONDS);
 	}
 
 	/**
