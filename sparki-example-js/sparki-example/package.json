@@ -1,0 +1,48 @@
+{
+  "name": "sparki-example",
+	"version": "1.0",
+	"description": "MOAT IoT Example 3 Application Package",
+	"maintainers": [
+		{
+			"name": "Example Maintainers",
+			"email": "maintainers@example.com"
+		}
+	],
+	"bugs": {
+		"mail": "bugs@example.com"
+	},
+	"notification" : { "http" : "http://localhost:3000/request_histories" },
+	"models" : {
+		"Sparki" : {
+			"array" : true,
+			"attributes" : {
+				"timestamp" : {"type" : "int64"},
+				"lcdText" : {"type" : "string"}
+			},
+			"commands" : {
+				"showTextOnLcd" : {"paramType" : "string"},
+				"sampleData" : {"paramType" : "string"}
+			}
+		},
+		"SparkiAction" : {
+			"array" : true,
+			"attributes" : {
+				"control" : {"type" : "string"},
+				"ledRed" : {"type" : "int16"},
+				"ledGreen" : {"type" : "int16"},
+				"ledBlue" : {"type" : "int16"},
+				"timestamp" : {"type" : "int64"}
+			}
+		},
+		"SparkiEvent" : {
+			"array" : true,
+			"attributes" : {
+				"rangeInCentimeter" : {"type" : "int16"},
+				"lightLeft" : {"type" : "int16"},
+				"lightCenter" : {"type" : "int16"},
+				"lightRight" : {"type" : "int16"},
+				"timestamp" : {"type" : "int64"}
+			}
+		}
+	}
+}
