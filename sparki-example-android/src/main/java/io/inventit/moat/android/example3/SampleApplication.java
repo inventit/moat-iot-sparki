@@ -219,7 +219,7 @@ public class SampleApplication extends Activity implements Listener,
 			client = getMoat().newInstance(PubSubClient.class, null);
 		}
 		if (client.connected() == false) {
-			client.begin(PayloadCodec.RAW, PayloadCodec.RAW);
+			client.begin();
 			LOGGER.info("Starting subscription for {}",
 					SparkiAction.class.getName());
 			client.subscribe(SparkiAction.class, PubSubQoS.FIRE_AND_FORGET,

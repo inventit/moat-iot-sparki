@@ -24,7 +24,7 @@
 		</repository>
 	</repositories>
 	<properties>
-		<api.version>4.1.0</api.version>
+		<api.version>4.1.5</api.version>
 		<android.api>19</android.api>
 	</properties>
 	<dependencies>
