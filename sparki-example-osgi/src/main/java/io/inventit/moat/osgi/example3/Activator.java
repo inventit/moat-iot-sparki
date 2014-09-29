@@ -237,7 +237,7 @@ public class Activator implements BundleActivator {
 		final PubSubClient<Class<?>> client = moat.newInstance(
 				PubSubClient.class, additionalProperties);
 		if (client.connected() == false) {
-			client.begin(PayloadCodec.RAW, PayloadCodec.RAW);
+			client.begin();
 			LOGGER.info("Starting subscription for {}",
 					SparkiAction.class.getName());
 			client.subscribe(SparkiAction.class, PubSubQoS.FIRE_AND_FORGET,
