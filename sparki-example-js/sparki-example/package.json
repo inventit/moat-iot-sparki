@@ -1,6 +1,6 @@
 {
   "name": "sparki-example",
-	"version": "1.0",
+	"version": "1.0.0",
 	"description": "MOAT IoT Example 3 Application Package",
 	"maintainers": [
 		{
@@ -10,6 +10,9 @@
 	],
 	"bugs": {
 		"mail": "bugs@example.com"
+	},
+	"dependencies": {
+		"moat": ">=1.0.0 <2.0.0"
 	},
 	"notification" : { "http" : "http://localhost:3000/request_histories" },
 	"models" : {
